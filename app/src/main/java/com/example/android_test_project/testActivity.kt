@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.android_test_project.ui.theme.Android_test_projectTheme
 import androidx.compose.ui.unit.dp
-import androidx.compose.foundation.layout.padding
+import kotlinx.serialization.Contextual
 
 
 class MainActivity : ComponentActivity() {
@@ -35,6 +35,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Surface (color = Color.Cyan) {
@@ -45,10 +46,20 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     }
 }
 
+@Composable
+fun Test() {
+    Surface ( color = Color.DarkGray ) {
+        Text(
+            text = "こんにちは"
+        )
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     Android_test_projectTheme {
         Greeting("miku")
+        Test()
     }
 }
